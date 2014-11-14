@@ -5,8 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.PrintWriter;
-import java.util.Random;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -31,8 +29,6 @@ public class OperationImageAction extends BaseAction{
 	
 	@Autowired
 	private OperationImageService operationImageService;
-	
-	private int index = 0 ; 
 	
 	/**
 	 * 压缩图片并返回缩略图

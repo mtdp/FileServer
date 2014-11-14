@@ -1,1 +1,1 @@
-将文件服务器修改成hessian协议上传文件的方式才有dubbo框架
+灏嗘枃浠舵湇鍔″櫒淇敼鎴恏essian鍗忚涓婁紶鏂囦欢鐨勬柟寮忔墠鏈塪ubbo妗嗘灦
