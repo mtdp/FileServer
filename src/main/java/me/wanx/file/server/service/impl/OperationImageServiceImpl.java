@@ -22,6 +22,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+/**
+ * 
+* @ClassName: OperationImageServiceImpl 
+* @Description: 压缩图片 
+* @author gqwang
+* @date 2014年11月14日 下午12:50:12 
+*
+ */
 @Service
 public class OperationImageServiceImpl implements OperationImageService {
 	
