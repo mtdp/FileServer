@@ -5,6 +5,14 @@ import java.util.UUID;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * 
+* @ClassName: FileServerUtils 
+* @Description: 工具类 
+* @author gqwang
+* @date 2014年11月14日 上午11:18:53 
+*
+ */
 public class FileServerUtils {
 	private static Logger logger = LoggerFactory.getLogger(FileServerUtils.class);
 	
