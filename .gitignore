@@ -2,3 +2,5 @@
 *.class
 #ºöÂÔtargetÄ¿Â¼
 /target
+#ºöÂÔ.settingsÄ¿Â¼
+./settings
