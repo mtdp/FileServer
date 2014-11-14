@@ -13,6 +13,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+
+/**
+ * 
+* @ClassName: Thumbs 
+* @Description: 压缩图片 配置类 
+* @author gqwang
+* @date 2014年11月14日 上午11:22:04 
+*
+ */
 @Service
 public class Thumbs {
 	private static Logger logger = LoggerFactory.getLogger(Thumbs.class);
