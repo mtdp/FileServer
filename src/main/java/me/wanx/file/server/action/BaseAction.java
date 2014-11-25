@@ -20,6 +20,9 @@ public class BaseAction{
 	protected HttpServletResponse response;
 	protected HttpServletRequest request;
 	
+	private String charset = "UTF-8";
+	private String contentType = "text/plain; charset=UTF-8";
+	
 	//每个请求都执行
 	@ModelAttribute
 	public void setRequestAndResponse(HttpServletRequest request,HttpServletResponse response){
@@ -29,6 +32,9 @@ public class BaseAction{
 	
 	
 	public void setResultMessage4Json(ResultMessage msg){
+		//设置返回编码
+		response.setContentType(this.contentType);
+		response.setCharacterEncoding(this.charset);
 		PrintWriter pw = null;
 		try {
 			pw = response.getWriter();
