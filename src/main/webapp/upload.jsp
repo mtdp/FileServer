@@ -26,6 +26,9 @@
 <script type="text/javascript">
 	$(function(){
 		$('#buttonId').on('click',function(){
+			console.log("button click");
+			//禁用按钮
+			$('#buttonId').attr('disabled','disabled');
 			var opt = {
 					url:"upload/uploadFile.do",
 					type:"POST",
@@ -33,6 +36,8 @@
 					dataType:"json",//约定返回的数据格式
 					success:function(resp){
 						$('.displayInfo').html(resp.info);
+						//启用
+						$('#buttonId').removeAttr('disabled');
 					}
 			};
 			/* 
