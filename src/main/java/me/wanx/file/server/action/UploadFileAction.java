@@ -20,6 +20,30 @@ public class UploadFileAction extends BaseAction {
 	private static final Logger logger = LoggerFactory.getLogger(UploadFileAction.class);
 	
 	
+	@RequestMapping(value="order/showSubmit.do",method = RequestMethod.POST)
+	public String showOrder(){
+//		response.addHeader("Pragma", "No-cache");
+//		response.addHeader("Cache-Control", "no-cache");
+//		response.setDateHeader("Expires",-10);
+		//浏览器后退显示 [网页已过期]
+		response.setHeader("Expires", "0");
+		response.setHeader("Cache-Control", "no-store");
+		response.setHeader("Pragrma", "no-cache");
+		response.setDateHeader("Expires", -10);
+		return "order/submitOrder";
+	}
+	
+	@RequestMapping(value="order/submit.do",method = RequestMethod.POST)
+	public String submitOrder(){
+//		response.setHeader("Expires", "0");
+//		response.setHeader("Cache-Control", "no-store");
+//		response.setHeader("Pragrma", "no-cache");
+//		response.setDateHeader("Expires", -10);
+		logger.info("=============== submit order end"+System.getProperty("user.dir"));
+		return "order/verifyOrder";
+	}
+	
+	
 	@RequestMapping(value="upload/uploadFile.do",method = RequestMethod.POST)
 	public @ResponseBody void testUploadFile(@RequestParam(value="uploadFile") MultipartFile uploadFile,
 							   @RequestParam(value="name") String name){
@@ -52,11 +76,37 @@ public class UploadFileAction extends BaseAction {
 		}
 		try {
 			logger.info("休息2s");
-			Thread.sleep(6000);
+			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		this.setResultMessage4Json("success", "处理成功,"+fileName+"文件内容有【"+index+"】行"); 
+		
+		this.setResultMessage4Json("success", "处理成功,"+fileName+"文件内容有【"+index+"】行",new MessageInfo(fileName,"处理成功")); 
+	}
+	
+	class MessageInfo{
+		private String fileName;
+		private String msg;
+		
+		public MessageInfo(){}
+		public MessageInfo(String fileName,String msg){
+			this.fileName = fileName;
+			this.msg = msg;
+		}
+		
+		public String getFileName() {
+			return fileName;
+		}
+		public void setFileName(String fileName) {
+			this.fileName = fileName;
+		}
+		public String getMsg() {
+			return msg;
+		}
+		public void setMsg(String msg) {
+			this.msg = msg;
+		}
+		
 	}
 	
 }

@@ -15,6 +15,7 @@ public class ResultMessage implements Serializable {
 	
 	private String code;
 	private String info;
+	private Object obj;
 	
 	public ResultMessage(){
 		
@@ -23,6 +24,12 @@ public class ResultMessage implements Serializable {
 	public ResultMessage(String code ,String info){
 		this.code = code;
 		this.info = info;
+	}
+	
+	public ResultMessage(String code ,String info,Object obj){
+		this.code = code;
+		this.info = info;
+		this.obj = obj;
 	}
 
 	public String getCode() {
@@ -39,6 +46,14 @@ public class ResultMessage implements Serializable {
 
 	public void setInfo(String info) {
 		this.info = info;
+	}
+
+	public Object getObj() {
+		return obj;
+	}
+
+	public void setObj(Object obj) {
+		this.obj = obj;
 	}
 
 }

@@ -57,4 +57,8 @@ public class BaseAction{
 		setResultMessage4Json(new ResultMessage(code, info));
 	}
 	
+	public void setResultMessage4Json(String code,String info,Object obj){
+		setResultMessage4Json(new ResultMessage(code, info,obj));
+	}
+	
 }
