@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.Serializable;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -85,10 +86,41 @@ public class OperationImageAction extends BaseAction{
 		return"";
 	}
 	
+	@ResponseBody
 	@RequestMapping("test/test.do")
 	public String test(ModelMap model){
 		logger.error(""+this.response);
 		model.addAttribute("test", "test value");
-		return "test";
+		return "测试中文";
+	}
+	
+	@ResponseBody
+	@RequestMapping("test/test2.do")
+	public foo resultJson(){
+		foo f = new foo("test","测试中文");
+		return f;
+	}
+	
+	class foo implements Serializable{
+		private static final long serialVersionUID = 1L;
+		public foo(){}
+		public foo(String id,String name){
+			this.id=id;
+			this.name=name;
+		}
+		String id;
+		String name;
+		public String getId() {
+			return id;
+		}
+		public void setId(String id) {
+			this.id = id;
+		}
+		public String getName() {
+			return name;
+		}
+		public void setName(String name) {
+			this.name = name;
+		}
 	}
 }
