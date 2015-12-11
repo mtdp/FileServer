@@ -26,7 +26,7 @@ public class FastDFSFileServiceTest extends BaseTest{
 		ByteArrayOutputStream byteArrOS = new ByteArrayOutputStream(1024*8);
 		FileInputStream fis = null;
 		try{
-			fis = new FileInputStream(new File("d:/tmp/1.jpg"));
+			fis = new FileInputStream(new File("d:/tmp/fdfs-db.txt"));
 			byte[] buff = new byte[1024*8];
 			int n = -1;
 			while((n = fis.read(buff)) != -1){
@@ -42,13 +42,13 @@ public class FastDFSFileServiceTest extends BaseTest{
 	
 	@Test
 	public void testDownload(){
-		CommonResponse<DownloadFileResponse> commResp = this.fastDFSFileService.download("CjDCpVZn1CKANo9fAAAFvCUFja097", "group1/M00/00/00/");
+		CommonResponse<DownloadFileResponse> commResp = this.fastDFSFileService.download("CjDCpVZqMxuAQkw0AAABsELQbxI9431445", "group1/M00/00/00/");
 		System.out.println("***************"+commResp);
 		if(commResp.isResp()){
 			byte[] byteArr = commResp.getRespData().getByteArr();
 			FileOutputStream fos = null;
 			try {
-				fos = new FileOutputStream(new File("d:/tmp/fdfs/ttt.jpg"));
+				fos = new FileOutputStream(new File("d:/tmp/fdfs/fdfs.txt"));
 				fos.write(byteArr);
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -65,7 +65,7 @@ public class FastDFSFileServiceTest extends BaseTest{
 	
 	@Test
 	public void testDelete(){
-		boolean b = this.fastDFSFileService.delete("CjDCpVZngSeAK6DoAAACC8-oMqo14", "group1/M00/00/00/");
+		boolean b = this.fastDFSFileService.delete("CjDCpVZo3tuAZpnVAAAFvCUFja07739497", "group1/M00/00/00/");
 		System.out.println(b == true ? "success" : "fail");
 	}
 	

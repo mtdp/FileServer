@@ -25,7 +25,7 @@ public interface FileSystemService {
 	/**
 	 * 
 	 * 下载文件
-	 * @param fileName 文件名称,不包括后缀
+	 * @param fileName 文件名称
 	 * @param remoteFilePath 存储服务器的文件路径
 	 * @return
 	 */
@@ -33,7 +33,7 @@ public interface FileSystemService {
 	
 	/**
 	 * 删除文件
-	 * @param fileName 文件名称,不包括后缀
+	 * @param fileName 文件名称
 	 * @param remoteFilePath 存储服务器的文件路径
 	 * @return
 	 */
